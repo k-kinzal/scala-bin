@@ -1,0 +1,36 @@
+{
+  "name": "scala-bin",
+  "version": "0.0.0",
+  "description": "Binary wrapper for Scala",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -rf vendor && node install.js && node cli.js -version",
+    "postinstall": "node install.js"
+  },
+  "bin": {
+    "scala": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k-kinzal/scala-bin"
+  },
+  "author": {
+    "name": "k-kinzal",
+    "email": "log@logn.in"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k-kinzal/scala-bin/issues"
+  },
+  "homepage": "https://github.com/k-kinzal/scala-bin",
+  "keywords": [
+    "cli-app",
+    "cli",
+    "bin",
+    "binary"
+  ],
+  "dependencies": {
+    "bin-wrapper": "^3.0.1",
+    "path": "^0.11.14"
+  }
+}
