@@ -4,11 +4,20 @@
   "description": "Binary wrapper for Scala",
   "main": "index.js",
   "scripts": {
-    "test": "rm -rf vendor && node install.js && node cli.js -version",
+    "test": "rm -rf vendor && node install.js",
+    "fsc": "node cli/fsc.js -version",
+    "scala": "node cli/scala.js -version",
+    "scalac": "node cli/scalac.js -version",
+    "scaladoc": "node cli/scaladoc.js -version",
+    "scalap": "node cli/scalap.js -version",
     "postinstall": "node install.js"
   },
   "bin": {
-    "scala": "cli.js"
+    "fsc": "cli/fsc.js",
+    "scala": "cli/scala.js",
+    "scalac": "cli/scalac.js",
+    "scaladoc": "cli/scaladoc.js",
+    "scalap": "cli/scalap.js"
   },
   "repository": {
     "type": "git",
