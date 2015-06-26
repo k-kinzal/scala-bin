@@ -1,11 +1,32 @@
 'use strict';
 
-var bin = require('./');
+var path = require('path');
+var BinWrapper = require('bin-wrapper');
 
-bin.run(['-version'], function (err) {
+var version = '2.11.6';
+
+var bin = new BinWrapper();
+bin.src('http://downloads.typesafe.com/scala/' + version + '/scala-' + version + '.tgz', 'darwin');
+bin.src('http://downloads.typesafe.com/scala/' + version + '/scala-' + version + '.tgz', 'linux');
+bin.dest(path.join(__dirname, 'vendor'));
+
+bin.download(function(err) {
   if (err) {
-    throw err;
+    console.log(err);
+    return;
   }
 
-  console.log('scala binary install successfully');
+  var binaries = require('./');
+  Object.keys(binaries).forEach(function(name) {
+    binaries[name].run(['-version'], function (err) {
+      if (err) {
+        throw err;
+      }
+
+      console.log(name + ' binary install successfully');
+    });
+  });
 });
+
+
+
