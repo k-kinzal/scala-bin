@@ -3,7 +3,7 @@
 var path = require('path');
 var BinWrapper = require('bin-wrapper');
 
-var version = '2.11.6';
+var version = '2.11.7';
 
 var bin = new BinWrapper();
 bin.src('http://downloads.typesafe.com/scala/' + version + '/scala-' + version + '.tgz', 'darwin');
