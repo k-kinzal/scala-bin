@@ -40,6 +40,6 @@
   ],
   "dependencies": {
     "bin-wrapper": "^3.0.2",
-    "path": "^0.11.14"
+    "bluebird": "^2.9.34"
   }
 }

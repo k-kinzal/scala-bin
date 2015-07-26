@@ -1,32 +1,37 @@
 'use strict';
 
-var path = require('path');
-var BinWrapper = require('bin-wrapper');
+var Promise = require('bluebird');
 
-var version = '2.11.7';
-
-var bin = new BinWrapper();
-bin.src('http://downloads.typesafe.com/scala/' + version + '/scala-' + version + '.tgz', 'darwin');
-bin.src('http://downloads.typesafe.com/scala/' + version + '/scala-' + version + '.tgz', 'linux');
-bin.dest(path.join(__dirname, 'vendor'));
-
-bin.download(function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
-
-  var binaries = require('./');
-  Object.keys(binaries).forEach(function(name) {
-    binaries[name].run(['-version'], function (err) {
-      if (err) {
-        throw err;
-      }
-
-      console.log(name + ' binary install successfully');
-    });
-  });
+Promise.resolve().then(function() {
+  return require('./src/fsc')
+           .runAsync(['-version'])
+           .then(function() {
+             console.log('fsc binary install successfully')
+           });
+}).then(function() {
+  return require('./src/scala')
+           .runAsync(['-version'])
+           .then(function() {
+             console.log('scala binary install successfully')
+           });
+}).then(function() {
+  return require('./src/scalac')
+           .runAsync(['-version'])
+           .then(function() {
+             console.log('scalac binary install successfully')
+           });
+}).then(function() {
+  return require('./src/scaladoc')
+           .runAsync(['-version'])
+           .then(function() {
+             console.log('scaladoc binary install successfully')
+           });
+}).then(function() {
+  return require('./src/scalap')
+           .runAsync(['-version'])
+           .then(function() {
+             console.log('scalap binary install successfully')
+           });
+}).catch(function(err) {
+  throw err;
 });
-
-
-

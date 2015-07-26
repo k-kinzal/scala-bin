@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-  'fsc':      require('./src/fsc'),
-  'scala':    require('./src/scala'),
-  'scalac':   require('./src/scalac'),
-  'scaladoc': require('./src/scaladoc'),
-  'scalap':   require('./src/scalap')
+  'fsc':      require('./src/fsc').path(),
+  'scala':    require('./src/scala').path(),
+  'scalac':   require('./src/scalac').path(),
+  'scaladoc': require('./src/scaladoc').path(),
+  'scalap':   require('./src/scalap').path()
 };

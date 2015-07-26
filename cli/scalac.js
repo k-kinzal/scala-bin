@@ -2,6 +2,6 @@
 'use strict';
 var spawn = require('child_process').spawn;
 var input = process.argv.slice(2);
-var bin = require('../')['scalac'].path();
+var bin = require('../')['scalac'];
 
 spawn(bin, input, {stdio: 'inherit'}).on('exit', process.exit);
