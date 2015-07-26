@@ -10,7 +10,7 @@
     "scalac": "node cli/scalac.js -version",
     "scaladoc": "node cli/scaladoc.js -version",
     "scalap": "node cli/scalap.js -version",
-    "postinstall": "node install.js"
+    "postinstall": "npm update && node install.js"
   },
   "bin": {
     "fsc": "cli/fsc.js",
