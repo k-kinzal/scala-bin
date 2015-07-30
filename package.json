@@ -9,15 +9,15 @@
     "scala": "node cli/scala.js -version",
     "scalac": "node cli/scalac.js -version",
     "scaladoc": "node cli/scaladoc.js -version",
-    "scalap": "node cli/scalap.js -version",
-    "postinstall": "npm update && node install.js"
+    "scalap": "node cli/scalap.js -version"
   },
   "bin": {
     "fsc": "cli/fsc.js",
     "scala": "cli/scala.js",
     "scalac": "cli/scalac.js",
     "scaladoc": "cli/scaladoc.js",
-    "scalap": "cli/scalap.js"
+    "scalap": "cli/scalap.js",
+    "scala-bin-install": "cli/install.js"
   },
   "repository": {
     "type": "git",

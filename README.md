@@ -6,6 +6,16 @@
 
 ## Get started
 
+
 ```
-npm install --save scala-bin
+$ npm install --save-dev scala-bin
+$ node_modules/.bin/scala-bin-install 
+```
+
+You write `package.json`.
+
+```json
+"scripts": {
+  "postinstall": "scala-bin-install"
+}
 ```
